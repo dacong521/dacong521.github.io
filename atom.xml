@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-22T11:05:52.042Z</updated>
+  <updated>2024-06-22T11:56:13.964Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>头文字D</title>
+    <link href="http://example.com/2024/06/22/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/"/>
+    <id>http://example.com/2024/06/22/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</id>
+    <published>2024-06-21T16:00:00.000Z</published>
+    <updated>2024-06-22T11:56:13.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>视频看到最后，音乐响起时，泪目了。这也是我最喜欢的一台车。</p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1001964272&bvid=BV1dx4y1m7Qa&cid=1474380717&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;视频看到最后，音乐响起时，泪目了。这也是我最喜欢的一台车。&lt;/p&gt;
+&lt;div style=&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;
+&lt;iframe src=&quot;//player.bi</summary>
+      
+    
+    
+    
+    
+    <category term="主题" scheme="http://example.com/tags/%E4%B8%BB%E9%A2%98/"/>
+    
+    <category term="Cactus" scheme="http://example.com/tags/Cactus/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
