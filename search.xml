@@ -25,11 +25,87 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2023/07/30/hello-world/"/>
-      <url>/2023/07/30/hello-world/</url>
+      <title>如何把微信视频号的视频下载下来？</title>
+      <link href="/2022/04/22/weixindown/"/>
+      <url>/2022/04/22/weixindown/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="如何把微信视频号的视频下载下来？"><a href="#如何把微信视频号的视频下载下来？" class="headerlink" title="如何把微信视频号的视频下载下来？"></a>如何把微信视频号的视频下载下来？</h2><span id="more"></span><h3 id="1-打开一个要下载的地址"><a href="#1-打开一个要下载的地址" class="headerlink" title="1. 打开一个要下载的地址"></a>1. 打开一个要下载的地址</h3><p>例如：</p><p><a href="https://link.zhihu.com/?target=https://mp.weixin.qq.com/s/eSIH77cJcPOK4RS6FPTKQQ">https://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/eSIH77cJcPOK4RS6FPTKQQ</a></p><p>用谷歌浏览器打开，截图如下，显示不了视频：</p><p><img src="https://pica.zhimg.com/80/v2-b233668591b48ac8c84c694ceea4af4c_720w.jpg?source=1940ef5c" alt="谷歌截图"></p><h3 id="2-按-F12-打开开发者模式，搜索关键字【-http-mpvideo-qpic-cn-】，然后复制定位到的地址代码"><a href="#2-按-F12-打开开发者模式，搜索关键字【-http-mpvideo-qpic-cn-】，然后复制定位到的地址代码" class="headerlink" title="2. 按 F12 打开开发者模式，搜索关键字【 http://mpvideo.qpic.cn 】，然后复制定位到的地址代码"></a>2. 按 F12 打开开发者模式，搜索关键字【 <a href="http://mpvideo.qpic.cn/">http://mpvideo.qpic.cn</a> 】，然后复制定位到的地址代码</h3><p><img src="https://pic1.zhimg.com/80/v2-b33fd90432eec071b3dfb72563101158_720w.jpg?source=1940ef5c" alt="F12"></p><h3 id="3-分析"><a href="#3-分析" class="headerlink" title="3. 分析"></a>3. 分析</h3><p>复制的代码如下</p><p><img src="https://pic2.zhimg.com/80/v2-f8170ab2813cdd449e102ab42143bd24_720w.jpg?source=1940ef5c" alt="分析"></p><p>修改为正常的代码把字段<code>\x26amp;</code>改成<code>&amp;</code>即可把字段<code>\x26amp;</code>改成<code>&amp;</code>即可</p><p><a href="https://link.zhihu.com/?target=http://mpvideo.qpic.cn/0bf22qgg4aamimagabmhevpvzv">https://link.zhihu.com/?target=http%3A//mpvideo.qpic.cn/0bf22qgg4aamimagabmhevpvzv</a></p><p>最好复制到浏览器打开，保存下载即可。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这该死的疫情啥时候能结束</title>
+      <link href="/2022/04/20/yiqing/"/>
+      <url>/2022/04/20/yiqing/</url>
+      
+        <content type="html"><![CDATA[<h1 id="这个该死的疫情啥时候能结束"><a href="#这个该死的疫情啥时候能结束" class="headerlink" title="这个该死的疫情啥时候能结束"></a>这个该死的疫情啥时候能结束</h1><span id="more"></span><p>自四月一号上海浦西封城以来，我们这个小区已经隔离在家整整21天了！目前还解封无望，一开始预计可能也就两个礼拜，我媳妇也被隔离在厂里，谁知这一别，都一个多月了，真是世事难料，疫情更难料！😒</p><p>被封之前备菜、备油、备米面，还备了一条烟，谁知封这么久，香烟已经在4天前断货了！吃喝倒是有，对于我们这些烟民来说，<code>精神粮食</code>短缺，也是备受煎熬啊！油头垢面，精神涣散…</p><p>还好，历经波折，让我媳妇帮我搞到一条烟，可是转运这条烟，真的是，一言难尽!各自隔离，只能靠外面的跑腿小哥有偿转送，下单加价至30元，也无人接单。后来听说有人为了买箱纸，平常40包邮到家，据说被加价到470块…😢</p><p><img src="/images/image/mmexport1650540907114.jpg" alt="470"><br><img src="/images/image/qq_pic_merged_1650541053930.jpg" alt="470"><br>想想我那30块的跑腿费，没人接单属于情理之中了吧！哈哈，贵不贵的也不做评论，毕竟人家也是拿<code>命</code>挣钱！</p><p>还好今天经我妹夫搭上了我们小区门口炸鸡店老板这条线!他们店属于小区外，比我们小区内的居民相对自由一点，30块跑腿费！心心念念的香烟终于到手!(开心！)</p><p><img src="/images/image/wx_camera_1650538696212.jpg" alt="香烟"></p><p>绝对要省这点抽啊！像演员李立群老师发的段子说的好，抽烟要少抽，不是怕对身体有害，是真怕断货了！😂😂</p><p>感谢我的媳妇！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 随记手札 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网页特效记录</title>
+      <link href="/2022/04/16/texiao/"/>
+      <url>/2022/04/16/texiao/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>网页特效记录</p></blockquote><span id="more"></span><div align='center' ><font size='70'>一个神奇的网页</font></div> <!--标题居中加粗--><style type="text/css"> <!--更换壁纸-->body{background: url("https://img.tt98.com/d/file/tt98/2020051815481031/5ec23d80db3d6.jpg") no-repeat center center fixed;                /*兼容浏览器版本*/                -webkit-background-size: cover;                -o-background-size: cover;                                background-size: cover;}</style><!-- <div id="xuehua"></div><!--雪花--><!-- <script src='https://api.vvhan.com/api/script/snow'></script> --><div id="xuehua"></div><!--透明波浪特效--><script src='https://api.vvhan.com/api/script/bolang'></script><!-- <div id="xuehua"></div><!--春节灯笼--><!-- <script src='https://api.vvhan.com/api/script/denglong'></script> --><!-- <div id="xuehua"></div><!--梅花特效--><!-- <script src='https://api.vvhan.com/api/script/meihua'></script> --><!DOCTYPE HTML><html><body><!-- class =“hitokoto ” 是一言的默认选择器-->      <h2 class="hitokoto" id="yiyancon"></h2>       <script type="text/javascript" src="https://international.v1.hitokoto.cn?encode=js&amp;charset=utf-8&amp;&amp;c=j&amp;c=k&amp;c=l"></script></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>写博客必备神器</title>
+      <link href="/2022/04/16/blogtool/"/>
+      <url>/2022/04/16/blogtool/</url>
+      
+        <content type="html"><![CDATA[<p>写博客必备神器Markdown。</p><span id="more"></span><p>完成了博客的搭建之后，接下来就是是内容创作了。而创作的过程中，我们又会有一系列的问题，比如：</p><ul><li>我们用什么工具来编写文章呢？</li><li>怎么才能快速生成格式化的Markdown表格？</li><li>怎么样才能画出一些高逼格的图片呢？</li><li>这些图片的存储和处理怎么办呢？文章中的代码高亮如何实现呢？</li></ul><p>要解决这些问题其实并不难，无非就是引入不同的工具来帮助我们，好的工具可以让我们的创作事半功倍！</p><h2 id="Markdown编辑器"><a href="#Markdown编辑器" class="headerlink" title="Markdown编辑器"></a>Markdown编辑器</h2><p>先来推荐一下我们要用的最重要的一个工具：Marddown编辑器。我们需要使用它来完成所有的创作内容，本人尝试了非常多的编辑器，最终锁定在下面这款Typora，因此推荐给大家。</p><ul><li>推荐工具：Typora</li><li>官方地址：<a href="https://www.typora.io/">https://www.typora.io/</a></li><li>推荐理由：是我目前所知道的最好用的免费编辑器了（虽然已经收费了）它支持多个主流的操作系统，不论你是Windows用户还是Mac用户，都能轻易的安装和使用它！除此之外，它还有多种不同的主题选择、导出一些常用格式（PDF、Word、HTML）等等非常有用的功能！</li></ul><p><img src="https://img.xycb.xyz//2022.416.png" alt="Typora"></p><h2 id="Markdown表格生成器"><a href="#Markdown表格生成器" class="headerlink" title="Markdown表格生成器"></a>Markdown表格生成器</h2><p>对于强迫症来说，写Markdown表格是一件很痛苦的事情，在语法对齐的问题上我真的是受尽了折磨，所以强烈推荐一个在线Markdown表格生成工具，它除了能快速生成格式化后的Markdown表格外，还支持导入各种数据，在线编辑，简直强大！</p><ul><li><p>推荐工具：Table Convert Online</p></li><li><p>官方地址：<a href="https://tableconvert.com/">https://tableconvert.com/</a></p></li><li><p>推荐理由：作为一款免费在线工具，支持Excel、JSON、HTML、CSV甚至是从URL中提取HTML表格转为Markdown表格，多功能集一身，并且融合在一个界面，使用非常方便，不需要切换页面。还可以像编辑Excel一样编辑生成各种表格，不愧为表格中的瑞士军刀！</p><p><img src="https://img.xycb.xyz//image-20220416134456242.png" alt="Table Convert Online"></p></li></ul><h2 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h2><p> quickref.me 是一个汇聚了大部分语言的语法索引页, 其中也包含了Markdown, 可以帮助大家快速找到想用的语法。</p><ul><li>推荐工具：Quick Reference</li><li>官方地址：<a href="https://quickref.me/">https://quickref.me/</a></li><li>推荐理由：无</li></ul><p><img src="https://img.xycb.xyz/QQ%E6%88%AA%E5%9B%BE20220416153012.png" alt="QQ截图20220416153012"></p><h2 id="画图工具"><a href="#画图工具" class="headerlink" title="画图工具"></a>画图工具</h2><p>对于我们这些写技术文章的博主来说，画画流程图、架构图是辅助描述文章内容的最佳途径，下面要推荐的ProcessOn就是目前我用得最多的画图工具。</p><ul><li>推荐工具：ProcessOn</li><li>官方地址：<a href="https://processon.com/">https://processon.com/</a></li><li>推荐理由：难得的国产在线图片编辑器，支持多人协作。同时，还有大量好看的图标支持，可以让我们的绘图更加生动！</li></ul><p><img src="https://img.xycb.xyz//image-20220416134728868.png" alt="ProcessOn"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/04/01/hello-world/"/>
+      <url>/2022/04/01/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>Hexo是基于Node.js构建的，所以我们需要下载TA</p><p>中文官网：<a href="https://nodejs.org/zh-cn" title="点击下载">Node.js</a></p><p>建议下载长期维护版，相比于最新尝鲜版，长期维护版会更加稳定</p><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>如果你要将你的项目推送到Github Pages或者Gitlab Pages,你会需要它，本文将以GitHub Pages作为示例，当然，如果你要使用自己的域名，也可能需要Git</p><p>Git官网：<a href="https://git-scm.com/" title="点击下载">Git</a></p><p>如果你的Git版本比Bayi的版本低或高，也许但未必会出现不兼容，报错的情况</p><h2 id="配置你的名称和邮箱"><a href="#配置你的名称和邮箱" class="headerlink" title="配置你的名称和邮箱"></a>配置你的名称和邮箱</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的git用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的git登录邮箱&quot;</span><br></pre></td></tr></table></figure><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ol><li>全局安装</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><ol start="2"><li>初始化</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p>3. </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure><ol start="4"><li>上传GITHEB</li></ol><p>更改项目根目录的配置文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: （你的项目HTTPS地址）     </span><br><span class="line">  branch: main（你的默认分支）</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
