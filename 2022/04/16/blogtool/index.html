@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="布点">
+
+
+    <meta name="subtitle" content="布点">
+
+
+    <meta name="description" content="人生苦短，及时行乐！">
+
+
+
+<title>Hexo 主题 Cactus 使用教程 | 布吉岛</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/category">Categories</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/category">Categories</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Hexo 主题 Cactus 使用教程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">布点</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">四月 16, 2022&nbsp;&nbsp;13:35:07</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Cactus"><a href="#Cactus" class="headerlink" title="Cactus"></a>Cactus</h1><p>A responsive, clean and simple <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> theme for a personal website.</p>
+<p>:cactus: <a target="_blank" rel="noopener" href="https://probberechts.github.io/hexo-theme-cactus/">Demo</a></p>
+<p><img src="https://user-images.githubusercontent.com/2175271/137625287-24a4ac77-fbc9-4c99-a4cd-90455d93d13c.png" alt="screenshot"></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
+<li><a href="#general">General</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><ul>
+<li><strong>Version</strong> : 3.0</li>
+<li><strong>Compatibility</strong> : Hexo 3 or later</li>
+</ul>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li>Fully responsive</li>
+<li>Multiple color schemes</li>
+<li>Pick your own code highlighting scheme</li>
+<li>Configurable navigation menu</li>
+<li>Support for local search</li>
+<li>Projects list</li>
+<li>I18n support</li>
+<li>Disqus &#x2F; Utterances</li>
+<li>Google analytics &#x2F; Baidu Tongji &#x2F; <a target="_blank" rel="noopener" href="https://umami.is/">Umami Analytics</a> </li>
+<li>Font Awesome icons</li>
+<li>Simplicity</li>
+</ul>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ol>
+<li><p>In order to use this theme you must have installed <a target="_blank" rel="noopener" href="https://hexo.io/docs/">hexo</a>.</p>
+</li>
+<li><p>Create the <code>root</code> directory for the blog by initializing it with hexo:</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init my-blog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Navigate into the new directory:</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><ol>
+<li><p>In the <code>root</code> directory:</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Change the <code>theme</code> property in the <code>_config.yml</code> file.</p>
+ <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># theme: landscape</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">cactus</span></span><br></pre></td></tr></table></figure>
+
+<p>See below for more information on how to customize this theme.</p>
+</li>
+<li><p>Create pages and articles with the <code>hexo new [layout] &lt;title&gt;</code> command.<br>For example, to create an “about me” page, run:</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>This will create a new file in <code>source/about/index.md</code><br>Similarly, you can create a new article with</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">&quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>and add some interesting content in <code>source/_posts/hello-world.md</code>.</p>
+</li>
+<li><p>Run: <code>hexo generate</code> and <code>hexo server</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Publish your blog</a>!</p>
+</li>
+</ol>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>You can (and should) modify a couple of settings. An overview of all settings<br>can be found in  <a href="_config.yml">_config.yml</a>. The most important ones are<br>discussed below.</p>
+<p>There are two possible methods to override the defaults. As a first option,<br>you could fork the theme and maintain a custom branch with your settings.<br>Alternatively, you can configure it from your site’s primary configuration<br>file. Therefore, define your custom settings under the <code>theme_config</code> variable.<br>For example:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _config.yml</span></span><br><span class="line"><span class="attr">theme_config:</span></span><br><span class="line">  <span class="attr">colorscheme:</span> <span class="string">white</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># themes/cactus/_config.yml</span></span><br><span class="line"><span class="attr">colorscheme:</span> <span class="string">dark</span></span><br></pre></td></tr></table></figure>
+
+<p>This will override the default black colorscheme in <code>themes/cactus/_config.yml</code>.</p>
+<h3 id="Color-scheme"><a href="#Color-scheme" class="headerlink" title="Color scheme"></a>Color scheme</h3><p>Currently, this theme is delivered with four color schemes: <a target="_blank" rel="noopener" href="https://probberechts.github.io/hexo-theme-cactus/cactus-dark/public/">dark</a>, <a target="_blank" rel="noopener" href="https://probberechts.github.io/hexo-theme-cactus/cactus-light/public/">light</a>,<br><a target="_blank" rel="noopener" href="https://probberechts.github.io/hexo-theme-cactus/cactus-white/public/">white</a> and <a target="_blank" rel="noopener" href="https://probberechts.github.io/hexo-theme-cactus/cactus-classic/public/">classic</a>. Set your preferred color scheme in the <code>_config.yml</code> file.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">colorscheme:</span> <span class="string">light</span></span><br></pre></td></tr></table></figure>
+
+<p>Alternatively, you can easily create your own color scheme by creating a new<br>file in <code>source/css/_colors</code>.</p>
+<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><p>Set up the navigation menu in the <code>_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span></span><br><span class="line">  <span class="attr">articles:</span> <span class="string">/archives/</span></span><br><span class="line">  <span class="attr">projects:</span> <span class="string">http://github.com/probberechts</span></span><br><span class="line">  <span class="attr">LINK_NAME:</span> <span class="string">URL</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Blog-posts-list-on-home-page"><a href="#Blog-posts-list-on-home-page" class="headerlink" title="Blog posts list on home page"></a>Blog posts list on home page</h3><p>You have two options for the list of blog posts on the home page:</p>
+<ul>
+<li><p>Show only the 5 most recent posts (default)</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">posts_overview:</span></span><br><span class="line">  <span class="attr">show_all_posts:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">post_count:</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Show all posts</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">posts_overview:</span></span><br><span class="line">  <span class="attr">show_all_posts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Projects-list"><a href="#Projects-list" class="headerlink" title="Projects list"></a>Projects list</h3><p>Create a projects file <code>source/_data/projects.json</code> to show a list of your projects on the index page.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Hexo&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span><span class="string">&quot;https://hexo.io/&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;desc&quot;</span><span class="punctuation">:</span><span class="string">&quot;A fast, simple &amp; powerful blog framework&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Font Awesome&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span><span class="string">&quot;http://fontawesome.io/&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;desc&quot;</span><span class="punctuation">:</span><span class="string">&quot;The iconic font and CSS toolkit&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Social-media-links"><a href="#Social-media-links" class="headerlink" title="Social media links"></a>Social media links</h3><p>Cactus can automatically add links to your social media accounts.<br>Therefore, update the theme’s <code>_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social_links:</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">github</span></span><br><span class="line">    <span class="attr">link:</span> <span class="string">your-github-url</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">twitter</span></span><br><span class="line">    <span class="attr">label:</span> <span class="string">&quot;@your-twitter-handle&quot;</span></span><br><span class="line">    <span class="attr">link:</span> <span class="string">your-twitter-url</span></span><br><span class="line">  <span class="bullet">-</span></span><br><span class="line">    <span class="attr">icon:</span> <span class="string">NAME</span></span><br><span class="line">    <span class="attr">label:</span> <span class="string">LABEL</span></span><br><span class="line">    <span class="attr">link:</span> <span class="string">your-NAME-url</span></span><br></pre></td></tr></table></figure>
+
+<p>where <code>NAME</code> is the name of a <a target="_blank" rel="noopener" href="https://fontawesome.com/icons?d=gallery&s=brands">Font Awesome icon</a>, and LABEL is an optional value used as a title attribute on the link (NAME value is used if LABEL is missing).</p>
+<h3 id="Copyright-years"><a href="#Copyright-years" class="headerlink" title="Copyright years"></a>Copyright years</h3><p>By default, Cactus will use current year in your copyright year information.<br>If there is a need to customize, please update <code>_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">copyright:</span></span><br><span class="line">  <span class="attr">start_year:</span> <span class="number">2016</span></span><br><span class="line">  <span class="attr">end_year:</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Language-configuration"><a href="#Language-configuration" class="headerlink" title="Language configuration"></a>Language configuration</h3><p>If you are new to Hexo and internationalization (i18n), please read<br><a target="_blank" rel="noopener" href="https://hexo.io/docs/internationalization.html">Hexo documentation - internationalization (i18n) section</a></p>
+<p>Currently, the theme is delivered with support for:</p>
+<ul>
+<li>English (en), default</li>
+<li>Arabic (ar)</li>
+<li>Brazilian Portuguese (pt-BR)</li>
+<li>Catalan (ca)</li>
+<li>Chinese (Simplified, PRC) (zh-CN)</li>
+<li>Dutch (nl)</li>
+<li>French (fr)</li>
+<li>German (de)</li>
+<li>Italian (it)</li>
+<li>Korean (kr)</li>
+<li>Persian (fa)</li>
+<li>Polish (pl)</li>
+<li>Russian (ru)</li>
+<li>Spanish (es)</li>
+<li>Taiwanese (Taiwanese Mandarin) (zh-TW)</li>
+<li>Turkish (tr)</li>
+<li>Ukrainian (ua)</li>
+<li>Vietnamese (vi)</li>
+</ul>
+<p>If you would like to use one the languages listed above, simply set <code>language</code><br>to the desired language (e.g., <code>fr</code>) in <code>_config.yml</code>.<br>Otherwise, you can follow the steps below (E.g., to add a Japanese (ja) translation):</p>
+<ol>
+<li>Set <code>language</code> to <code>ja</code> in Hexo configuration file <code>_config.yml</code></li>
+<li>Create a <code>ja.yml</code> file in the <code>themes/cactus/languages/</code> folder</li>
+<li>Copy the content of <code>themes/cactus/languages/default.yml</code> and paste it it into the <code>ja.yml</code> file</li>
+<li>Replace all English strings by their Japanese translation</li>
+</ol>
+<p><strong>Note: Cactus does not support multi-language sites.</strong></p>
+<h3 id="RTL-support"><a href="#RTL-support" class="headerlink" title="RTL support"></a>RTL support</h3><p>This theme support RTL languages for Persian and Arabic language.<br>If you would like to use RTL layout, change <code>direction</code> attribute in <code>_config.yml</code> to <code>rtl</code>.<br>Note that this also will change the font to <a target="_blank" rel="noopener" href="https://github.com/rastikerdar/vazir-font">Vazir</a>, which is a Persian font.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">direction: rtl</span><br></pre></td></tr></table></figure>
+
+<h3 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h3><p>Set the <code>rss</code> field in the <code>_config.yml</code> to one of the following values:</p>
+<ol>
+<li><code>rss: false</code> will totally disable rss (default).</li>
+<li><code>rss: atom.xml</code> sets a specific feed link.</li>
+<li><code>rss:</code>leave empty to use the <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> plugin.</li>
+</ol>
+<h3 id="Analytics"><a href="#Analytics" class="headerlink" title="Analytics"></a>Analytics</h3><p>Add you Google, Baidu, Cloudflare or Umami Analytics <code>tracking_id</code> to the <code>_config.yml</code>.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">google_analytics:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">&#x27;UA-49627206-1&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">baidu_analytics:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">2e6da3c375c8a87f5b664cea6d4cb29c</span></span><br><span class="line"></span><br><span class="line"><span class="attr">cloudflare_analytics:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">0dabb6e21848405483a237e6a7b6ed04</span></span><br><span class="line"></span><br><span class="line"><span class="attr">umami_analytics:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">e77e68be-f6e4-4br3-9365-2b76b57cd571</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">https://analytics.domain.com</span></span><br><span class="line">  <span class="attr">script_name:</span> <span class="string">umami.js</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>Load Javascript and CSS resources from a CDN. Enabled by default, loads all resources from <a target="_blank" rel="noopener" href="https://cdnjs.com/">cdnjs</a>.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cdn:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">jquery:</span> <span class="string">&#x27;url&#x27;</span></span><br><span class="line">  <span class="attr">clipboard:</span> <span class="string">&#x27;url&#x27;</span></span><br><span class="line">  <span class="attr">font_awesome:</span> <span class="string">&#x27;url&#x27;</span></span><br><span class="line">  <span class="attr">justified_gallery_css:</span> <span class="string">&#x27;url&#x27;</span></span><br><span class="line">  <span class="attr">justified_gallery_js:</span> <span class="string">&#x27;url&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>Set <code>enable: false</code> to completely disable CDN and load all resources from your domain. If you want to disable it only for specific resource(s) then just remove the corresponding entry(s).</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cdn:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">jquery:</span> <span class="string">&#x27;url&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>Only JQuery will be loaded from the specified CDN.</p>
+<h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><p>Cactus supports two commenting systems: <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a> and <a target="_blank" rel="noopener" href="https://utteranc.es/">Utterances</a>.</p>
+<h4 id="Disqus"><a href="#Disqus" class="headerlink" title="Disqus"></a>Disqus</h4><p>First, create a site on Disqus: <a target="_blank" rel="noopener" href="http://disqus.com/admin/create/">https://disqus.com/admin/create/</a>.</p>
+<p>Next, update the <code>_config.yml</code> file:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">disqus:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">shortname:</span> <span class="string">SITENAME</span></span><br></pre></td></tr></table></figure>
+
+<p>where <code>SITENAME</code> is the name you gave your site on Disqus.</p>
+<h4 id="Utterances"><a href="#Utterances" class="headerlink" title="Utterances"></a>Utterances</h4><p>First, follow the instructions on the <a target="_blank" rel="noopener" href="https://utteranc.es/">oficial website</a> to setup an issue tracker Utterances will connect to.</p>
+<p>Next, update the <code>_config.yml</code> file:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">utterances:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">owner/githubrepo</span></span><br><span class="line">  <span class="attr">issue_term:</span> <span class="string">pathname</span></span><br><span class="line">  <span class="attr">label:</span> <span class="string">utteranc</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">themename</span></span><br></pre></td></tr></table></figure>
+
+<p>where each of the parameters are the respective values ​​provided during the configuration of the Utterances:</p>
+<ul>
+<li><code>repo</code>:  the repository Utterances will connect to.</li>
+<li><code>issue_term</code>: the mapping between blog posts and GitHub issues.</li>
+<li><code>label</code>: the label that will be assigned to issues created by Utterances</li>
+<li><code>theme</code>: the selected Utterances theme.</li>
+</ul>
+<h3 id="Code-Highlighting"><a href="#Code-Highlighting" class="headerlink" title="Code Highlighting"></a>Code Highlighting</h3><p>Pick one of <a target="_blank" rel="noopener" href="https://github.com/probberechts/hexo-theme-cactus/tree/master/source/css/_highlight">the available colorschemes</a> and add it to the <code>_config.yml</code>:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span> <span class="string">COLORSCHEME_NAME</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Tags-and-categories"><a href="#Tags-and-categories" class="headerlink" title="Tags and categories"></a>Tags and categories</h3><p>Tags and categories can be included in the front-matter of your posts. For example:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">title: Tags and Categories</span><br><span class="line">date: 2017-12-24 23:29:53</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">-</span> Foo</span><br><span class="line"><span class="bullet">-</span> Bar</span><br><span class="line">categories: </span><br><span class="line"><span class="section">- Baz</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">This post contains 2 tags and 1 category.</span><br></pre></td></tr></table></figure>
+
+<p>You can create a page with a tag cloud by running:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>Next, add <code>type: tags</code> to the front-matter of <code>source/tags/index.md</code>. You can also<br>add a tag cloud to the home page by setting the <code>tags_overview</code> option to <code>true</code>.</p>
+<p>Similarly, you can create a page with an overview of all categories by running:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>and adding <code>type: categories</code> to the front-matter of <code>source/categories/index.md</code>. </p>
+<p>Finally, don’t forget to create a link to these pages, for example in the navigation menu:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="attr">tag:</span> <span class="string">/tags/</span></span><br><span class="line">  <span class="attr">category:</span> <span class="string">/categories/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Local-search"><a href="#Local-search" class="headerlink" title="Local search"></a>Local search</h3><p>First, install the <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-generator-search">hexo-generate-search</a><br>plugin, which will generate a search index file.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
+
+<p>Next, create a page to display the search engine:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page search</span><br></pre></td></tr></table></figure>
+
+<p>and put <code>type: search</code> in the front-matter.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Search</span><br><span class="line"><span class="section">type: search</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>Finally, edit the <code>_config.yml</code> and add a link to the navigation menu.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="attr">search:</span> <span class="string">/search/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>布点</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://budian.top/2022/04/16/blogtool/">https://budian.top/2022/04/16/blogtool/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/HEXO/"># HEXO</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2022/04/16/texiao/">网页特效记录</a>
+            
+            
+            <a class="next" rel="next" href="/2022/04/01/hello-world/">Hello World</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 布点 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
